@@ -1,0 +1,15 @@
+<div class="card">
+  <h2>{{ painting.title }}</h2>
+  <img [src]="painting.imageUrl" [alt]="painting.title" class="painting-image" style="max-width: 300px; height: auto;">
+  <p><b>Автор:</b> {{ painting.author }}</p>
+  <p><b>Рік створення:</b> {{ painting.year | yearFormat }}</p>
+  <p><b>Розміри:</b> {{ painting.size }}</p>
+
+  <div *ngIf="showLocation">
+    <p><b>Місцезнаходження:</b> {{ painting.location }}</p>
+  </div>
+
+  <button (click)="toggleLocation()">
+    {{ showLocation ? 'Приховати' : 'Показати' }} місцезнаходження
+  </button>
+</div>
