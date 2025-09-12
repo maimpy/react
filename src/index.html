@@ -1,0 +1,176 @@
+<!-- <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker - Головна</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .feature-card {
+            transition: transform 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #667eea !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <i class="fas fa-graduation-cap me-2"></i>Study Tracker
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./app/pages/dashboard/dashboard.html">Панель</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./app/pages/add-task/add-task.html">Додати завдання</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./app/pages/statistics/statistics.html">Статистика</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-4">Організуйте своє навчання</h1>
+                    <p class="lead mb-5">Study Tracker допоможе вам ефективно планувати та відслідковувати ваш навчальний прогрес</p>
+                    <a href="./app/pages/add-task/add-task.html" class="btn btn-light btn-lg px-5 py-3">
+                        <i class="fas fa-plus me-2"></i>Почати зараз
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-6 fw-bold">Чому обрати Study Tracker?</h2>
+                    <p class="text-muted">Ефективні інструменти для успішного навчання</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h4>Управління завданнями</h4>
+                        <p class="text-muted">Легко додавайте, редагуйте та відслідковуйте свої навчальні завдання</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Прогрес та статистика</h4>
+                        <p class="text-muted">Візуальна аналітика вашого навчального прогресу</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h4>Планування часу</h4>
+                        <p class="text-muted">Організуйте свій розклад та дотримуйтесь дедлайнів</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="h2 fw-bold text-primary">1000+</div>
+                    <p class="text-muted">Завершених завдань</p>
+                </div>
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="h2 fw-bold text-primary">50+</div>
+                    <p class="text-muted">Активних студентів</p>
+                </div>
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="h2 fw-bold text-primary">95%</div>
+                    <p class="text-muted">Рівень задоволення</p>
+                </div>
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="h2 fw-bold text-primary">24/7</div>
+                    <p class="text-muted">Підтримка</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="mb-4">Готові почати ефективно навчатися?</h3>
+                    <p class="text-muted mb-4">Приєднуйтесь до тисяч студентів, які вже покращили свої результати</p>
+                    <a href="./app/pages/dashboard/dashboard.html" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-tachometer-alt me-2"></i>Перейти до панелі
+                    </a>
+                    <a href="./app/pages/add-task/add-task.html" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-plus me-2"></i>Додати завдання
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>Study Tracker</h5>
+                    <p class="text-muted">Ваш помічник у навчанні</p>
+                </div>
+                <div class="col-lg-6 text-end">
+                    <p class="text-muted">&copy; 2024 Study Tracker. Всі права захищені.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> -->
+
+<app-root></app-root>

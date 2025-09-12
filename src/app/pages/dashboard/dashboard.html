@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker - Панель</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0 40px 0;
+        }
+        .task-column {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .task-card {
+            border-left: 5px solid;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+        .task-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .task-card.priority-high {
+            border-color: #dc3545;
+        }
+        .task-card.priority-medium {
+            border-color: #ffc107;
+        }
+        .task-card.priority-low {
+            border-color: #28a745;
+        }
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #667eea !important;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <i class="fas fa-graduation-cap me-2"></i>Study Tracker
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./index.html">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./app/pages/dashboard/dashboard.html">Панель</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./app/pages/add-task/add-task.html">Додати завдання</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./app/pages/statistics/statistics.html">Статистика</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold"><i class="fas fa-tachometer-alt me-3"></i>Панель управління</h1>
+            <p class="lead">Відстежуйте ваш навчальний прогрес у реальному часі</p>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="task-column" >
+                    <h3 class="mb-4 text-secondary"><i class="fas fa-list-ul me-2"></i>Очікує</h3>
+                    <!-- ----------- -->
+                    <div class="container my-5">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-lg-4" *ngFor="let task of tasks">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                    <h5 class="card-title fw-bold text-primary">{{task.title}}</h5>
+                                    <p class="card-subtitle mb-2 text-muted">{{task.date | date}}</p>
+                                    </div>
+                                    <button type="button" class="btn-close" aria-label="Delete" (click)="deleteTask(task.id)"></button>
+                                    <button 
+  type="button" 
+  class="btn btn-sm btn-primary ms-2" 
+  (click)="editTask(task.id)"> <!-- ✅ Змінюємо виклик -->
+  <i class="fas fa-edit"></i>
+</button>
+                                    
+                                    
+                                    
+
+
+                                </div>
+                                <p class="card-text">
+                                    <span class="badge bg-secondary rounded-pill me-2">{{task.subject}}</span>
+                                    <span class="badge bg-info text-dark rounded-pill">{{task.duration}} год</span>
+                                </p>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                  <!-- ----------- -->
+
+                    <a href="/add" class="btn btn-outline-primary w-100 mt-3">
+                        <i class="fas fa-plus-circle me-2"></i>Додати завдання
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="task-column">
+                    <h3 class="mb-4 text-info"><i class="fas fa-spinner me-2"></i>В процесі</h3>
+
+                    
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="task-column">
+                    <h3 class="mb-4 text-success"><i class="fas fa-check-circle me-2"></i>Виконано</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+<h2>My study ssesion</h2>
+    <ul>
+      <li *ngFor="let task of tasks">
+        <b>{{task.title}}</b> ({{task.subject}}) - ({{task.duration}})h on ({{task.date | date}})
+        <button (click)="deleteTask(task.id)">X</button>
+        <button 
+  type="button" 
+  class="btn btn-sm btn-primary ms-2" 
+  (click)="editTask(task.id)"> <!-- ✅ Змінюємо виклик -->
+  <i class="fas fa-edit"></i>
+</button>
+      </li>
+    </ul>
+
+    <a routerLink="/add"> Add Task </a>
+    <a routerLink="/stats"> Stats </a>

@@ -1,0 +1,34 @@
+<div class="container my-5">
+<div class="card shadow-sm p-4">
+<h2 class="card-title text-center mb-4">Редагувати завдання</h2>
+
+<!-- Перевірка, чи існує завдання для редагування -->
+<div *ngIf="task; else notFound">
+  <form (ngSubmit)="saveChanges()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Назва завдання</label>
+      <input type="text" id="title" class="form-control" [(ngModel)]="task.title" name="title" required>
+    </div>
+    <div class="mb-3">
+      <label for="subject" class="form-label">Предмет</label>
+      <input type="text" id="subject" class="form-control" [(ngModel)]="task.subject" name="subject" required>
+    </div>
+    <div class="mb-3">
+      <label for="date" class="form-label">Дата</label>
+      <input type="date" id="date" class="form-control" [(ngModel)]="task.date" name="date" required>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Скасувати</button>
+    </div>
+  </form>
+</div>
+
+<ng-template #notFound>
+  <div class="alert alert-danger" role="alert">
+    Завдання не знайдено.
+  </div>
+</ng-template>
+
+</div>
+</div>
